@@ -1,0 +1,190 @@
+:root {
+  --clr-white: hsl(0, 0, 100%);
+  --clr-slate-300: hsl(212, 45%, 89%);
+  --clr-slate-500: hsl(216, 15%, 48%);
+  --clr-slate-900: hsl(218, 44%, 22%);
+
+  --fs-normal: 0.938rem;
+
+  --ff-outfit: "Outfit", sans-serif;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --shadow-color: 199deg 10% 66%;
+  --shadow-elevation: 0px 1px 1.3px hsl(var(--shadow-color) / 0.23),
+    0px 2.8px 3.5px -0.8px hsl(var(--shadow-color) / 0.23),
+    0px 6.7px 8.4px -1.7px hsl(var(--shadow-color) / 0.23),
+    0px 16px 20px -2.5px hsl(var(--shadow-color) / 0.23);
+
+  --shadow-elevation-hover: 0px 1px 0.65px hsl(var(--shadow-color) / 0.23),
+    0px 2.8px 3.5px -0.4px hsl(var(--shadow-color) / 0.23),
+    0px 6.7px 8.4px -0.8px hsl(var(--shadow-color) / 0.23),
+    0px 16px 20px -1.25px hsl(var(--shadow-color) / 0.23);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* utilities */
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* general styling */
+
+body {
+  background-color: var(--clr-slate-300);
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-normal);
+  font-family: var(--ff-outfit);
+}
+
+/* animations */
+
+.card {
+  will-change: transform;
+  transition: transform 850ms;
+}
+
+.card-wrapper:hover .card {
+  transition: transform 500ms;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-elevation-hover);
+}
+
+/* card styling */
+
+.card {
+  background-color: white;
+  max-width: calc(340rem / 16);
+  padding: calc(12rem / 16) 0 calc(50rem / 16);
+  border-radius: 17px;
+  box-shadow: var(--shadow-elevation);
+}
+
+.card__img-wrapper {
+  max-width: calc(314rem / 16);
+  min-height: calc(314rem / 16);
+  padding: calc(4rem / 16);
+}
+
+.card__img {
+  border-radius: 10px;
+}
+
+.card__content {
+  text-align: center;
+  padding: 0 calc(30rem / 16);
+  color: var(--clr-slate-500);
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  color: var(--clr-slate-900);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-wrapper:hover,
+  .card {
+    transition: none;
+  }
+}
