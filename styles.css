@@ -155,16 +155,15 @@ body {
 
 .card {
   background-color: white;
-  max-width: calc(340rem / 16);
-  padding: calc(12rem / 16) 0 calc(50rem / 16);
+  max-width: calc(310rem / 16);
+  padding: calc(16rem / 16) calc(16rem / 16) calc(22rem / 16);
   border-radius: 17px;
   box-shadow: var(--shadow-elevation);
 }
 
 .card__img-wrapper {
-  max-width: calc(314rem / 16);
-  min-height: calc(314rem / 16);
-  padding: calc(4rem / 16);
+  max-width: calc(279rem / 16);
+  min-height: calc(279rem / 16);
 }
 
 .card__img {
@@ -173,7 +172,7 @@ body {
 
 .card__content {
   text-align: center;
-  padding: 0 calc(30rem / 16);
+  padding: calc(10rem / 16);
   color: var(--clr-slate-500);
 }
 
